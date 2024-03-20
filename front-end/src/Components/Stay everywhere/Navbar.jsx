@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../../public/image/logo.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css"
 
 const Navbar = () => {
@@ -9,8 +9,11 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
+        <NavLink to={"/doctor-dashboard"}>Doctor Dashboard</NavLink>
       <li>
         <NavLink to={"/services"}>Services</NavLink>
+      </li>
+      <li>
       </li>
       <li>
         <NavLink to={"/all-doctors"}>All Doctors</NavLink>
@@ -35,9 +38,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="w-[40%] flex justify-end ">
-        <button className="btn text-[16px] font-semibold rounded-full px-8 bg-gradient-to-r from-[#4842f4] text-white to-[#4cddf2]">
+        <Link to={"/login"} className="btn text-[16px] font-semibold rounded-full px-8 bg-gradient-to-r from-[#4842f4] text-white to-[#4cddf2]">
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
