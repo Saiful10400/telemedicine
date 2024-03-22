@@ -6,10 +6,10 @@ import DoctorSignup from "./Components/Authentication/DoctorSignup";
 import PatientSignup from "./Components/Authentication/PatientSignup";
 import DoctorDashboard from "./Components/Doctor dashboard/DoctorDashboard";
 import DoctorProfile from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorProfile";
-import DashboardRoute from "./Components/Doctor dashboard/components/DashboardRoute";
 import DoctorBasicInfo from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorBasicInfo";
 import DoctorEducationQualification from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorEducationQualification";
 import DoctorWorkExperience from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorWorkExperience";
+import DashboardRoute from "./Components/Doctor dashboard/components/Dashboard route nested/DashboardRoute";
 
 export const router=createBrowserRouter([{
     path:"/",
@@ -24,7 +24,7 @@ export const router=createBrowserRouter([{
             element:<DoctorDashboard></DoctorDashboard>,
             children:[
                 {
-                    path:"/doctor-dashboard/Dashboard",
+                    path:"/doctor-dashboard",
                     element:<DashboardRoute></DashboardRoute>
                 },
                 {
@@ -32,7 +32,7 @@ export const router=createBrowserRouter([{
                     element:<DoctorProfile></DoctorProfile>,
                     children:[
                         {
-                            path:"/doctor-dashboard/Profile/Basic-Info",
+                            path:"/doctor-dashboard/Profile",
                             element:<DoctorBasicInfo></DoctorBasicInfo>
                         },
                         {

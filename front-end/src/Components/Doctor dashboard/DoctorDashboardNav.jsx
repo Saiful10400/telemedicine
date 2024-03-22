@@ -10,8 +10,8 @@ import { axiosPublic } from '../../Custom hoocks/useAxiosPublic';
 
 const DoctorDashboardNav = () => {
     const li=<>
-    <NavLink className={""} to={"/doctor-dashboard/Profile/Basic-info"}><li className='text-xl flex justify-center items-center gap-3'><FaUser /><span>Profile</span></li></NavLink>
-    <NavLink className={""} to={"/doctor-dashboard/Dashboard"}><li className='text-xl flex justify-center items-center gap-3'><MdSpaceDashboard /> <span>Dashboard</span></li></NavLink>
+    <NavLink className={""} to={"/doctor-dashboard/Profile"}><li className='text-xl flex justify-center items-center gap-3'><FaUser /><span>Profile</span></li></NavLink>
+    <NavLink className={""} to={"/doctor-dashboard"}><li className='text-xl flex justify-center items-center gap-3'><MdSpaceDashboard /> <span>Dashboard</span></li></NavLink>
     <NavLink className={""} to={"/doctor-dashboard/logout"}><li className='text-xl flex justify-center items-center gap-3'><MdLogout /> <span>Logout</span></li></NavLink>
      
     </>

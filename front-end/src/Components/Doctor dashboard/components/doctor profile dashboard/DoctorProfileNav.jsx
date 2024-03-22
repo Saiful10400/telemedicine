@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 const DoctorProfileNav = () => {
     const li=<>
     <li>
-        <NavLink to={"/doctor-dashboard/Profile/Basic-Info"}>Basic Info</NavLink></li>
-        <li> <NavLink to={"/doctor-dashboard/Profile/Educational-Qualification"}>Educational Qualification</NavLink></li>
+        <NavLink to={"/doctor-dashboard/Profile"}>Basic Info</NavLink></li>
+        <li> <NavLink   to={"/doctor-dashboard/Profile/Educational-Qualification"}>Educational Qualification</NavLink></li>
         <li>  <NavLink to={"/doctor-dashboard/Profile/Work-experiance"}>Work Experiance</NavLink></li>
       
     </>
