@@ -65,7 +65,8 @@ async function run() {
     const {profilePhoto,email}=req.body
     const updateData={
       $set:{
-        profilePhoto
+        profilePhoto,
+        publish:true
       }
     } 
     const result=await doctorsCollection.updateOne({email},updateData,{upsert:true})
@@ -84,6 +85,14 @@ app.post("/doctor-post-bio",async(req,res)=>{
   const result=await doctorsCollection.updateOne({email:data.person},updateData,{upsert:true})
   res.send(result)
 })
+
+// 5. get all doctors.
+app.get("/get-all-doctor",async(req,res)=>{
+  const result=await doctorsCollection.find({publish:true}).toArray()
+  res.send(result)
+})
+
+
 
 
     // 1.2 manage all patient.

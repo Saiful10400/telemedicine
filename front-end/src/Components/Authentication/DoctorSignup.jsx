@@ -28,7 +28,8 @@ const DoctorSignup = () => {
       phoneNumber: form.phoneNumber.value,
       email: form.email.value,
       password: form.password.value,
-      userType:"doctor"
+      userType:"doctor",
+      publish:false
     };
     
     

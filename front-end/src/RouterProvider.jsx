@@ -10,6 +10,7 @@ import DoctorBasicInfo from "./Components/Doctor dashboard/components/doctor pro
 import DoctorEducationQualification from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorEducationQualification";
 import DoctorWorkExperience from "./Components/Doctor dashboard/components/doctor profile dashboard/DoctorWorkExperience";
 import DashboardRoute from "./Components/Doctor dashboard/components/Dashboard route nested/DashboardRoute";
+import AllDoctor from "./Components/All doctors/AllDoctor";
 
 export const router=createBrowserRouter([{
     path:"/",
@@ -63,6 +64,10 @@ export const router=createBrowserRouter([{
         {
             path:"/sign-up/patient",
             element:<PatientSignup></PatientSignup>
+        },
+        {
+            path:"/all-doctors",
+            element:<AllDoctor></AllDoctor>
         }
 
     ]
