@@ -34,7 +34,7 @@ const {person,logoutHandle}=useContext(dataProvider)
      
     </>
 
-console.log(person)
+ 
 
 
 

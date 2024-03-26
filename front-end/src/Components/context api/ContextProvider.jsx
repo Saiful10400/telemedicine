@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import {io} from "socket.io-client"
 import {
     signOut,
     GoogleAuthProvider,
@@ -11,10 +12,23 @@ import {
   } from "firebase/auth";
 import { auth } from '../../firebase/firebase.config';
 
-
+const socket=io("http://localhost:5000")
 export const dataProvider=createContext(null)
 
+
+
+// socket io practice.
+
+
+
+
+
+
+
 const ContextProvider = ({children}) => {
+
+
+
 const[person,setPerson]=useState(null)
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,(user)=>{
@@ -47,7 +61,7 @@ const[person,setPerson]=useState(null)
 
 
     const contextData={
-        logoutHandle,emailAndPasswordsignup,loginWithEmail,person
+        logoutHandle,emailAndPasswordsignup,loginWithEmail,person,socket
     }
     return (
        <dataProvider.Provider value={contextData}>

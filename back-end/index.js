@@ -21,7 +21,10 @@ const io = new Server(server,{
 
 // socket io handle.
 io.on("connection", (socket) => {
-  console.log("a user is connected.");
+  console.log("a user is connected.",socket.id);
+  socket.on("message",res=>{
+    console.log(res)
+  })
 });
 
 const uri = `mongodb+srv://${process.env.MONGO_USER_NAME}:${process.env.MONGO_USER_PASSWORD}@cluster0.qe6izo7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
@@ -86,11 +89,22 @@ app.post("/doctor-post-bio",async(req,res)=>{
   res.send(result)
 })
 
-// 5. get all doctors.
+// 5. post doctor educational qualification.
+
+
+app.post("/post-doctor-qualification", async(req,res)=>{
+  const {email,data}=req.body
+  const result=await doctorsCollection.updateOne({email},{$push:{education:data}},{upsert:true})
+  res.send(result)
+})
+
+
+// 6. get all doctors.
 app.get("/get-all-doctor",async(req,res)=>{
   const result=await doctorsCollection.find({publish:true}).toArray()
   res.send(result)
 })
+
 
 
 

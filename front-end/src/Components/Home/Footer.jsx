@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./footer.css";
 import { FaPlus } from "react-icons/fa6";
 import logo from "../../../public/image/lightLogo.svg";
@@ -14,7 +14,20 @@ import foot4 from "../../../public/image/Footer/footer image/foot4.jpg";
 import foot5 from "../../../public/image/Footer/footer image/foot5.jpg";
 import foot6 from "../../../public/image/Footer/footer image/foot6.jpg";
 import { FaInstagram } from "react-icons/fa6";
+import { dataProvider } from "../context api/ContextProvider";
 const Footer = () => {
+
+  const{socket}=useContext(dataProvider)
+
+  const subscribeFormHandle=(e)=>{
+    e.preventDefault()
+    const email=e.target.email.value
+    console.log(email)
+    socket.emit("message",email)
+
+  }
+
+
   return (
     <div id="footerId" className="min-h-[50vh] pt-28 ">
       <div className="lg:w-[1400px] mx-auto flex justify-center items-center gap-x-20 overflow-hidden">
@@ -24,10 +37,10 @@ const Footer = () => {
             Subscribe to out newsletter today to receive latest news
             administrate cost effective for tactical data.
           </p>
-          <form className=" border border-white rounded-full flex items-center">
+          <form onSubmit={subscribeFormHandle} className=" border border-white rounded-full flex items-center">
             <input
               className="focus:outline-none w-full text-white bg-transparent  font-semibold text-lg py-[10px]  px-3"
-              type="email"
+              type="email" name="email"
               placeholder="Your Email"
             />
             <button
